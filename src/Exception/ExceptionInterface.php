@@ -11,14 +11,12 @@
 namespace Zend\Uri\Exception;
 
 /**
- * Exceptions for Zend_Uri
+ * Exception for Zend_Uri
  *
  * @category  Zend
  * @package   Zend_Uri
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
-class InvalidUriException
-    extends \InvalidArgumentException
-    implements ExceptionInterface
+interface ExceptionInterface
 {}
