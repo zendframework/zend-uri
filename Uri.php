@@ -3,7 +3,7 @@
  * Zend Framework (http://framework.zend.com/)
  *
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
@@ -20,14 +20,10 @@ class Uri implements UriInterface
     /**
      * Character classes defined in RFC-3986
      */
-    const CHAR_UNRESERVED   = 'a-zA-Z0-9_\-\.~';
-    const CHAR_GEN_DELIMS   = ':\/\?#\[\]@';
-    const CHAR_SUB_DELIMS   = '!\$&\'\(\)\*\+,;=';
-    const CHAR_RESERVED     = ':\/\?#\[\]@!\$&\'\(\)\*\+,;=';
-    /**
-     * Not in the spec - those characters have special meaning in urlencoded query parameters
-     */
-    const CHAR_QUERY_DELIMS = '!\$\'\(\)\*\,';
+    const CHAR_UNRESERVED = 'a-zA-Z0-9_\-\.~';
+    const CHAR_GEN_DELIMS = ':\/\?#\[\]@';
+    const CHAR_SUB_DELIMS = '!\$&\'\(\)\*\+,;=';
+    const CHAR_RESERVED   = ':\/\?#\[\]@!\$&\'\(\)\*\+,;=';
 
     /**
      * Host part types represented as binary masks
@@ -1308,7 +1304,7 @@ class Uri implements UriInterface
         $query = self::encodeQueryFragment(
             self::decodeUrlEncodedChars(
                 $query,
-                '/[' . self::CHAR_UNRESERVED . self::CHAR_QUERY_DELIMS . ':@\/\?]/'
+                '/[' . self::CHAR_UNRESERVED . self::CHAR_SUB_DELIMS . '%:@\/\?]/'
             )
         );
 
@@ -1325,14 +1321,7 @@ class Uri implements UriInterface
      */
     protected static function normalizeFragment($fragment)
     {
-        $fragment = self::encodeQueryFragment(
-            self::decodeUrlEncodedChars(
-                $fragment,
-                '/[' . self::CHAR_UNRESERVED . self::CHAR_SUB_DELIMS . '%:@\/\?]/'
-            )
-        );
-
-        return $fragment;
+        return static::normalizeQuery($fragment);
     }
 
     /**
