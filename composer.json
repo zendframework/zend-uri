@@ -14,8 +14,8 @@
     },
     "require": {
         "php": ">=5.3.23",
-        "zendframework/zend-escaper": "~2.5.0",
-        "zendframework/zend-validator": "~2.5.0"
+        "zendframework/zend-escaper": "~2.5",
+        "zendframework/zend-validator": "~2.5"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
