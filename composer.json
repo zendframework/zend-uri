@@ -14,15 +14,15 @@
     },
     "require": {
         "php": ">=5.3.23",
-        "zendframework/zend-escaper": "~2.4",
-        "zendframework/zend-validator": "~2.4"
+        "zendframework/zend-escaper": "~2.5.0",
+        "zendframework/zend-validator": "~2.5.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "2.4-dev",
-            "dev-develop": "2.5-dev"
+            "dev-master": "2.5-dev",
+            "dev-develop": "2.6-dev"
         }
     },
     "autoload-dev": {
