@@ -1293,9 +1293,21 @@ class UriTest extends \PHPUnit_Framework_TestCase
     public function commonBaseUriProvider()
     {
         return [
-             ['http://example.com/dir/subdir/', 'http://example.com/dir/subdir/more/file1.txt', 'more/file1.txt'],
-             ['http://example.com/dir/subdir/', 'http://example.com/dir/otherdir/file2.txt',    '../otherdir/file2.txt'],
-             ['http://example.com/dir/subdir/', 'http://otherhost.com/dir/subdir/file3.txt',    'http://otherhost.com/dir/subdir/file3.txt'],
+             [
+                 'http://example.com/dir/subdir/',
+                 'http://example.com/dir/subdir/more/file1.txt',
+                 'more/file1.txt',
+             ],
+             [
+                 'http://example.com/dir/subdir/',
+                 'http://example.com/dir/otherdir/file2.txt',
+                 '../otherdir/file2.txt',
+             ],
+             [
+                 'http://example.com/dir/subdir/',
+                 'http://otherhost.com/dir/subdir/file3.txt',
+                 'http://otherhost.com/dir/subdir/file3.txt',
+             ],
         ];
     }
 
