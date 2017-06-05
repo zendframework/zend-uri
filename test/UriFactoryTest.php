@@ -9,12 +9,13 @@
 
 namespace ZendTest\Uri;
 
+use PHPUnit\Framework\TestCase;
 use Zend\Uri\UriFactory;
 
 /**
  * @group      Zend_Uri
  */
-class UriFactoryTest extends \PHPUnit_Framework_TestCase
+class UriFactoryTest extends TestCase
 {
     /**
      * General composing / parsing tests
