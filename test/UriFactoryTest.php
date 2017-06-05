@@ -9,12 +9,13 @@
 
 namespace ZendTest\Uri;
 
+use PHPUnit\Framework\TestCase;
 use Zend\Uri\UriFactory;
 
 /**
  * @group      Zend_Uri
  */
-class UriFactoryTest extends \PHPUnit_Framework_TestCase
+class UriFactoryTest extends TestCase
 {
     /**
      * General composing / parsing tests
@@ -80,7 +81,7 @@ class UriFactoryTest extends \PHPUnit_Framework_TestCase
      * Test, that unknown Schemes will result in an exception
      *
      * @param string $uri an uri with an unknown scheme
-     * @expectedException Zend\Uri\Exception\InvalidArgumentException
+     * @expectedException \Zend\Uri\Exception\InvalidArgumentException
      * @dataProvider unknownSchemeThrowsExceptionProvider
      */
     public function testUnknownSchemeThrowsException($uri)

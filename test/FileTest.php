@@ -9,8 +9,9 @@
 
 namespace ZendTest\Uri;
 
+use Zend\Uri\Exception\InvalidUriPartException;
 use Zend\Uri\File as FileUri;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group      Zend_Uri
@@ -117,7 +118,7 @@ class FileTest extends TestCase
     public function testInvalidScheme($scheme)
     {
         $uri = new FileUri;
-        $this->setExpectedException('Zend\Uri\Exception\InvalidUriPartException');
+        $this->expectException(InvalidUriPartException::class);
         $uri->setScheme($scheme);
     }
 
