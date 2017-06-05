@@ -11,6 +11,7 @@ namespace ZendTest\Uri;
 
 use PHPUnit\Framework\TestCase;
 use Zend\Uri\Uri;
+use Zend\Uri\Exception as UriException;
 
 /**
  * @group      Zend_Uri
@@ -78,8 +79,8 @@ class UriTest extends TestCase
      */
     public function testParseSchemeInvalidInput($input)
     {
-        $this->setExpectedException('Zend\Uri\Exception\InvalidArgumentException');
-        $scheme = Uri::parseScheme($input);
+        $this->expectException(UriException\InvalidArgumentException::class);
+        Uri::parseScheme($input);
     }
 
     /**
@@ -99,8 +100,8 @@ class UriTest extends TestCase
      */
     public function testToStringThrowsExceptionIfInvalid(Uri $uri)
     {
-        $this->setExpectedException('Zend\Uri\Exception\InvalidUriException');
-        $string = $uri->toString();
+        $this->expectException(UriException\InvalidUriException::class);
+        $uri->toString();
     }
 
     /**
@@ -296,7 +297,7 @@ class UriTest extends TestCase
     public function testSetInvalidScheme($scheme)
     {
         $uri = new Uri;
-        $this->setExpectedException('Zend\Uri\Exception\InvalidUriPartException');
+        $this->expectException(UriException\InvalidUriPartException::class);
         $uri->setScheme($scheme);
     }
 
@@ -322,7 +323,7 @@ class UriTest extends TestCase
     public function testSetInvalidHost($host)
     {
         $uri = new Uri;
-        $this->setExpectedException('Zend\Uri\Exception\InvalidUriPartException');
+        $this->expectException(UriException\InvalidUriPartException::class);
         $uri->setHost($host);
     }
 
@@ -760,8 +761,8 @@ class UriTest extends TestCase
      */
     public function testConstructorInvalidInput($input)
     {
-        $this->setExpectedException('Zend\Uri\Exception\InvalidArgumentException');
-        $uri = new Uri($input);
+        $this->expectException(UriException\InvalidArgumentException::class);
+        new Uri($input);
     }
 
     /**

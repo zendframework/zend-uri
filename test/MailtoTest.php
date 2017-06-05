@@ -9,6 +9,7 @@
 
 namespace ZendTest\Uri;
 
+use Zend\Uri\Exception\InvalidUriPartException;
 use Zend\Uri\Mailto as MailtoUri;
 use PHPUnit\Framework\TestCase;
 
@@ -89,7 +90,7 @@ class MailtoTest extends TestCase
     public function testInvalidScheme($scheme)
     {
         $uri = new MailtoUri;
-        $this->setExpectedException('Zend\Uri\Exception\InvalidUriPartException');
+        $this->expectException(InvalidUriPartException::class);
         $uri->setScheme($scheme);
     }
 

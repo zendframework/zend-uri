@@ -9,6 +9,7 @@
 
 namespace ZendTest\Uri;
 
+use Zend\Uri\Exception\InvalidUriPartException;
 use Zend\Uri\Http as HttpUri;
 use PHPUnit\Framework\TestCase;
 
@@ -118,7 +119,7 @@ class HttpTest extends TestCase
     public function testInvalidScheme($scheme)
     {
         $uri = new HttpUri;
-        $this->setExpectedException('Zend\Uri\Exception\InvalidUriPartException');
+        $this->expectException(InvalidUriPartException::class);
         $uri->setScheme($scheme);
     }
 

@@ -81,7 +81,7 @@ class UriFactoryTest extends TestCase
      * Test, that unknown Schemes will result in an exception
      *
      * @param string $uri an uri with an unknown scheme
-     * @expectedException Zend\Uri\Exception\InvalidArgumentException
+     * @expectedException \Zend\Uri\Exception\InvalidArgumentException
      * @dataProvider unknownSchemeThrowsExceptionProvider
      */
     public function testUnknownSchemeThrowsException($uri)
