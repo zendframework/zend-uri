@@ -1346,4 +1346,14 @@ class UriTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($uri->getQuery());
         $this->assertNull($uri->getFragment());
     }
+
+    public function testReservedCharsInPathUnencoded()
+    {
+        $uri = new Uri();
+        $uri->setScheme('https');
+        $uri->setHost('api.linkedin.com');
+        $uri->setPath('/v1/people/~:(first-name,last-name,email-address,picture-url)');
+
+        $this->assertSame('https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address,picture-url)', $uri->toString());
+    }
 }
