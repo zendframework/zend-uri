@@ -221,4 +221,21 @@ class Http extends Uri
 
         return $this;
     }
+    
+    /**
+     * Return the Origin (scheme://host:port).
+     *
+     * Default ports are not included by default - see $forceIncludePort if you want to always include them
+     *
+     * @param  bool $forceIncludePort if set to true, the port will be always included in the origin
+     * @return string
+     */
+    public function getOrigin($forceIncludePort = false){
+       $origin = $this->getScheme().'://'.$this->getHost();
+       if($forceIncludePort || !in_array($this->getPort(), $this->defaultPorts) ){
+           $origin .= ':'.$this->serverUri->getPort();
+       }
+       return $origin;
+    }
+    
 }
