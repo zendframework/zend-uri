@@ -167,7 +167,6 @@ $uri = Zend\Uri\UriFactory::factory('http:');
 
 // $uri instanceof Zend\Uri\UriInterface</code></pre>
 
-
 <p>To create a new URI from scratch, pass only the scheme followed by a colon to
 <code>Zend\Uri\UriFactory::factory()</code>. If an unsupported scheme is passed and no
 scheme-specific class is specified, a
@@ -203,7 +202,6 @@ $ftpUri = UriFactory::factory(
 // $ftpUri is an instance of MyLibrary\MyClass, which implements
 // Zend\Uri\UriInterface</code></pre>
 
-
 <h2 id="manipulating-an-existing-uri">Manipulating an Existing URI</h2>
 <p>To manipulate an existing URI, pass the entire URI as a string to
 <code>Zend\Uri\UriFactory::factory()</code>, and then manipulate the instance returned.</p>
@@ -214,7 +212,6 @@ $ftpUri = UriFactory::factory(
 $uri = UriFactory::factory('http://www.zend.com');
 
 // $uri instanceof Zend\Uri\UriInterface</code></pre>
-
 
 <p>The URI will be parsed and validated. If it is found to be invalid, a
 <code>Zend\Uri\Exception\InvalidArgumentException</code> will be thrown immediately.
@@ -231,7 +228,6 @@ example, the scheme of <code>http://johndoe@example.com/my/path?query#token</cod
 
 $scheme = $uri-&gt;getScheme();  // &quot;mailto&quot;</code></pre>
 
-
 <p>The <code>getScheme()</code> instance method returns only the scheme part of the URI
 object (not the separator).</p>
 <h3 id="getting-the-userinfo-of-the-uri">Getting the Userinfo of the URI</h3>
@@ -242,7 +238,6 @@ colon and comes before the host-part. For example, the userinfo of
 
 $scheme = $uri-&gt;getUserinfo();  // &quot;john.doe&quot;</code></pre>
 
-
 <p>The <code>getUserinfo()</code> method returns only the userinfo part of the URI object.</p>
 <h3 id="getting-the-host-of-the-uri">Getting the host of the URI</h3>
 <p>The host of the URI is the optional part of the URI that follows the
@@ -251,7 +246,6 @@ user-part and comes before the path-part. For example, the host of
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
 $scheme = $uri-&gt;getHost();  // &quot;example.com&quot;</code></pre>
-
 
 <p>The <code>getHost()</code> method returns only the host part of the URI object.</p>
 <h3 id="getting-the-port-of-the-uri">Getting the port of the URI</h3>
@@ -262,13 +256,11 @@ and comes before the path-part. For example, the host of
 
 $scheme = $uri-&gt;getPort();  // &quot;8080&quot;</code></pre>
 
-
 <p>Concrete URI instances can define default ports that can be returned when no
 port is given in the URI:</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com');
 
 $scheme = $uri-&gt;getPort();  // &quot;80&quot;</code></pre>
-
 
 <p>The <code>getHost()</code> method returns only the port part of the URI object.</p>
 <h3 id="getting-the-path-of-the-uri">Getting the path of the URI</h3>
@@ -279,7 +271,6 @@ and comes before the query-part. For example, the path of
 
 $scheme = $uri-&gt;getPath();  // &quot;/my/path&quot;</code></pre>
 
-
 <p>The <code>getPath()</code> method returns only the path of the URI object.</p>
 <h3 id="getting-the-query-part-of-the-uri">Getting the query-part of the URI</h3>
 <p>The query-part of the URI is an optional part of the URI that follows the
@@ -288,7 +279,6 @@ path and comes before the fragment. For example, the query of
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
 $scheme = $uri-&gt;getQuery();  // &quot;a=b&amp;c=d&quot;</code></pre>
-
 
 <p>The <code>getQuery()</code> method returns only the query-part of the URI object.</p>
 <p>The query string often contains key=value pairs and therefore can be split into an
@@ -301,7 +291,6 @@ $scheme = $uri-&gt;getQueryAsArray();
 //  'c' =&gt; 'd',
 // ]</code></pre>
 
-
 <h3 id="getting-the-fragment-part-of-the-uri">Getting the fragment-part of the URI</h3>
 <p>The fragment-part of the URI is an optional part of the URI that follows
 the query. For example, the fragment of
@@ -309,7 +298,6 @@ the query. For example, the fragment of
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
 $scheme = $uri-&gt;getFragment();  // &quot;token&quot;</code></pre>
-
 
 <p>The <code>getFragment()</code> method returns only the fragment-part of the URI object.</p>
 <h3 id="getting-the-entire-uri">Getting the Entire URI</h3>
@@ -320,7 +308,6 @@ echo $uri-&gt;toString();  // &quot;http://www.zend.com&quot;
 
 // Alternate method:
 echo (string) $uri;     // &quot;http://www.zend.com&quot;</code></pre>
-
 
 <p>The <code>Zend\Uri\UriInterface</code> defines also the magic <code>__toString()</code> method that
 returns the string representation of the URI when the object is cast to a
@@ -334,7 +321,6 @@ can later become invalid after it is manipulated.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
 
 $isValid = $uri-&gt;isValid();  // TRUE</code></pre>
-
 
 <p>The <code>isValid()</code> instance method provides a means to check that the URI object
 is still valid.</p>
