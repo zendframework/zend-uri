@@ -1007,7 +1007,7 @@ class Uri implements UriInterface
             ));
         }
 
-        $regex   = '/(?:[^' . self::CHAR_UNRESERVED . ':@&=\+\$,\/;%]+|%(?![A-Fa-f0-9]{2}))/';
+        $regex   = '/(?:[^' . self::CHAR_UNRESERVED . ')(:@&=\+\$,\/;%]+|%(?![A-Fa-f0-9]{2}))/';
         $escaper = static::getEscaper();
         $replace = function ($match) use ($escaper) {
             return $escaper->escapeUrl($match[0]);
