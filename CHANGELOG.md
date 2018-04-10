@@ -6,7 +6,8 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- Nothing.
+- [#4](https://github.com/zendframework/zend-uri/pull/4) adds and publishes the
+  documentation to https://zendframework.github.io/zend-uri/
 
 ### Deprecated
 
@@ -19,25 +20,6 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - [#16](https://github.com/zendframework/zend-uri/pull/16) removes support for
   HHVM.
-
-### Fixed
-
-- Nothing.
-
-## 2.5.3 - TBD
-
-### Added
-
-- [#4](https://github.com/zendframework/zend-uri/pull/4) adds and publishes the
-  documentation to https://zendframework.github.io/zend-uri/
-
-### Deprecated
-
-- Nothing.
-
-### Removed
-
-- Nothing.
 
 ### Fixed
 
