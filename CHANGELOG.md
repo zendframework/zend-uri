@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.5.3 - TBD
+## 2.6.0 - TBD
 
 ### Added
 
@@ -15,7 +15,11 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Removed
 
-- Nothing.
+- [#16](https://github.com/zendframework/zend-uri/pull/16) removes support for
+  PHP 5.5.
+
+- [#16](https://github.com/zendframework/zend-uri/pull/16) removes support for
+  HHVM.
 
 ### Fixed
 
