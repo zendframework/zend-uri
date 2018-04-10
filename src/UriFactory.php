@@ -26,7 +26,7 @@ abstract class UriFactory
      *
      * @var array
      */
-     protected static $schemeClasses = [
+    protected static $schemeClasses = [
         'http'   => 'Zend\Uri\Http',
         'https'  => 'Zend\Uri\Http',
         'mailto' => 'Zend\Uri\Mailto',
@@ -87,7 +87,7 @@ abstract class UriFactory
      */
     public static function factory($uriString, $defaultScheme = null)
     {
-        if (!is_string($uriString)) {
+        if (! is_string($uriString)) {
             throw new Exception\InvalidArgumentException(sprintf(
                 'Expecting a string, received "%s"',
                 (is_object($uriString) ? get_class($uriString) : gettype($uriString))
@@ -96,7 +96,7 @@ abstract class UriFactory
 
         $uri    = new Uri($uriString);
         $scheme = strtolower($uri->getScheme());
-        if (!$scheme && $defaultScheme) {
+        if (! $scheme && $defaultScheme) {
             $scheme = $defaultScheme;
         }
 
