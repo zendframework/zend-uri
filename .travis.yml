@@ -16,7 +16,7 @@ cache:
 env:
   global:
     - COMPOSER_ARGS="--no-interaction"
-    - COVERAGE_DEPS="satooshi/php-coveralls"
+    - COVERAGE_DEPS="php-coveralls/php-coveralls"
     - LEGACY_DEPS="phpunit/phpunit"
     - SITE_URL: https://zendframework.github.io/zend-uri
     - GH_USER_NAME: "Matthew Weier O'Phinney"
@@ -63,7 +63,7 @@ notifications:
   email: false
 
 before_install:
-  - if [[ $TRAVIS_PHP_VERSION != "hhvm" && $TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini ; fi
+  - if [[ $TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini ; fi
 
 install:
   - travis_retry composer install $COMPOSER_ARGS --ignore-platform-reqs
@@ -84,4 +84,4 @@ after_success:
   - if [[ $DEPLOY_DOCS == "true" ]]; then echo "Preparing to build and deploy documentation" ; ./zf-mkdoc-theme/deploy.sh ; echo "Completed deploying documentation" ; fi
 
 after_script:
-  - if [[ $TEST_COVERAGE == 'true' ]]; then ./vendor/bin/coveralls ; fi
+  - if [[ $TEST_COVERAGE == 'true' ]]; then travis_retry php ./vendor/bin/php-coveralls ; fi
