@@ -23,7 +23,9 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- Nothing.
+- [#17](https://github.com/zendframework/zend-uri/pull/17) updates the path
+  encoding algorithm to allow `(` and `)` characters as path characters (per
+  the RFC-3986, these are valid sub-delimiters allowed within a path).
 
 ## 2.5.2 - 2016-02-17
 
