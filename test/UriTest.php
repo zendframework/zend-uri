@@ -1368,6 +1368,9 @@ class UriTest extends TestCase
         $uri->setHost('api.linkedin.com');
         $uri->setPath('/v1/people/~:(first-name,last-name,email-address,picture-url)');
 
-        $this->assertSame('https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address,picture-url)', $uri->toString());
+        $this->assertSame(
+            'https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address,picture-url)',
+            $uri->toString()
+        );
     }
 }
