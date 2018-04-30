@@ -2,22 +2,22 @@
     "docs": [
         {
             "location": "/",
-            "text": "zend-uri\n\n\n\n\n\n\nzend-uri aids in manipulating and validating Uniform Resource Identifiers\n(\nURIs\n). zend-uri exists primarily to\nassist other components, such as zend-http, but is also useful as a standalone\nutility.\n\n\n\n\nFile issues at https://github.com/zendframework/zend-uri/issues\n\n\nDocumentation is at https://zendframework.github.io/zend-uri/",
-            "title": "Home"
+            "text": "zend-uri\n\n\n\n\n\n\nzend-uri aids in manipulating and validating Uniform Resource Identifiers\n(\nURIs\n). zend-uri exists primarily to\nassist other components, such as zend-http, but is also useful as a standalone\nutility.\n\n\n\n\nFile issues at https://github.com/zendframework/zend-uri/issues\n\n\nDocumentation is at https://docs.zendframework.com/zend-uri/",
+            "title": "zend-uri"
         },
         {
             "location": "/#zend-uri",
-            "text": "zend-uri aids in manipulating and validating Uniform Resource Identifiers\n( URIs ). zend-uri exists primarily to\nassist other components, such as zend-http, but is also useful as a standalone\nutility.   File issues at https://github.com/zendframework/zend-uri/issues  Documentation is at https://zendframework.github.io/zend-uri/",
+            "text": "zend-uri aids in manipulating and validating Uniform Resource Identifiers\n( URIs ). zend-uri exists primarily to\nassist other components, such as zend-http, but is also useful as a standalone\nutility.   File issues at https://github.com/zendframework/zend-uri/issues  Documentation is at https://docs.zendframework.com/zend-uri/",
             "title": "zend-uri"
         },
         {
             "location": "/intro/",
-            "text": "Introduction\n\n\nzend-uri aids in manipulating and validating \nUniform \nResource Identifiers\n\n(\nURIs\n). zend-uri exists primarily\nto assist other components, such as\n\nzend-http\n, but is also useful as a\nstandalone utility.\n\n\nURIs always begin with a scheme, followed by a colon. The construction of the\nmany different schemes varies significantly. The zend-uri component provides the\n\nZend\\Uri\\UriFactory\n that returns an instance of the appropriate class\nimplementing \nZend\\Uri\\UriInterface\n for the given scheme (assuming the factory\ncan locate one).",
+            "text": "Introduction\n\n\nzend-uri aids in manipulating and validating \nUniform\nResource Identifiers\n\n(\nURIs\n). zend-uri exists primarily\nto assist other components, such as\n\nzend-http\n, but is also useful as a\nstandalone utility.\n\n\nURIs always begin with a scheme, followed by a colon. The construction of the\nmany different schemes varies significantly. The zend-uri component provides the\n\nZend\\Uri\\UriFactory\n that returns an instance of the appropriate class\nimplementing \nZend\\Uri\\UriInterface\n for the given scheme (assuming the factory\ncan locate one).",
             "title": "Intro"
         },
         {
             "location": "/intro/#introduction",
-            "text": "zend-uri aids in manipulating and validating  Uniform \nResource Identifiers \n( URIs ). zend-uri exists primarily\nto assist other components, such as zend-http , but is also useful as a\nstandalone utility.  URIs always begin with a scheme, followed by a colon. The construction of the\nmany different schemes varies significantly. The zend-uri component provides the Zend\\Uri\\UriFactory  that returns an instance of the appropriate class\nimplementing  Zend\\Uri\\UriInterface  for the given scheme (assuming the factory\ncan locate one).",
+            "text": "zend-uri aids in manipulating and validating  Uniform\nResource Identifiers \n( URIs ). zend-uri exists primarily\nto assist other components, such as zend-http , but is also useful as a\nstandalone utility.  URIs always begin with a scheme, followed by a colon. The construction of the\nmany different schemes varies significantly. The zend-uri component provides the Zend\\Uri\\UriFactory  that returns an instance of the appropriate class\nimplementing  Zend\\Uri\\UriInterface  for the given scheme (assuming the factory\ncan locate one).",
             "title": "Introduction"
         },
         {
