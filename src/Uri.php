@@ -192,7 +192,7 @@ class Uri implements UriInterface
     public function isValid()
     {
         if ($this->host) {
-            if (strlen($this->path) > 0 && substr($this->path, 0, 1) != '/') {
+            if (strlen($this->path) > 0 && 0 !== strpos($this->path, '/')) {
                 return false;
             }
             return true;
@@ -204,7 +204,7 @@ class Uri implements UriInterface
 
         if ($this->path) {
             // Check path-only (no host) URI
-            if (substr($this->path, 0, 2) == '//') {
+            if (0 === strpos($this->path, '//')) {
                 return false;
             }
             return true;
@@ -231,7 +231,7 @@ class Uri implements UriInterface
 
         if ($this->path) {
             // Check path-only (no host) URI
-            if (substr($this->path, 0, 2) == '//') {
+            if (0 === strpos($this->path, '//')) {
                 return false;
             }
             return true;
@@ -337,7 +337,7 @@ class Uri implements UriInterface
         }
 
         // All that's left is the fragment
-        if ($uri && substr($uri, 0, 1) == '#') {
+        if ($uri && 0 === strpos($uri, '#')) {
             $this->setFragment(substr($uri, 1));
         }
 
@@ -483,7 +483,7 @@ class Uri implements UriInterface
                     $this->setQuery($baseUri->getQuery());
                 }
             } else {
-                if (substr($relPath, 0, 1) == '/') {
+                if (0 === strpos($relPath, '/')) {
                     $this->setPath(static::removePathDotSegments($relPath));
                 } else {
                     if ($baseUri->getHost() && ! $basePath) {
@@ -1105,7 +1105,7 @@ class Uri implements UriInterface
                     }
                     $output = substr($output, 0, $lastSlashPos);
                     break;
-                case (substr($path, 0, 4) == '/../'):
+                case (0 === strpos($path, '/../')):
                     $path   = '/' . substr($path, 4);
                     $lastSlashPos = strrpos($output, '/', -1);
                     if (false === $lastSlashPos) {
@@ -1113,13 +1113,13 @@ class Uri implements UriInterface
                     }
                     $output = substr($output, 0, $lastSlashPos);
                     break;
-                case (substr($path, 0, 3) == '/./'):
+                case (0 === strpos($path, '/./')):
                     $path = substr($path, 2);
                     break;
-                case (substr($path, 0, 2) == './'):
+                case (0 === strpos($path, './')):
                     $path = substr($path, 2);
                     break;
-                case (substr($path, 0, 3) == '../'):
+                case (0 === strpos($path, '../')):
                     $path = substr($path, 3);
                     break;
                 default:
