@@ -682,7 +682,7 @@ class Uri implements UriInterface
      * You can check if a scheme is valid before setting it using the
      * validateScheme() method.
      *
-     * @param  string $scheme
+     * @param  string|null $scheme
      * @throws Exception\InvalidUriPartException
      * @return Uri
      */
@@ -703,7 +703,7 @@ class Uri implements UriInterface
     /**
      * Set the URI User-info part (usually user:password)
      *
-     * @param  string $userInfo
+     * @param  string|null $userInfo
      * @return Uri
      * @throws Exception\InvalidUriPartException If the schema definition
      * does not have this part
@@ -728,7 +728,7 @@ class Uri implements UriInterface
      * example the HTTP RFC clearly states that only IPv4 and valid DNS names
      * are allowed in HTTP URIs.
      *
-     * @param  string $host
+     * @param  string|null $host
      * @throws Exception\InvalidUriPartException
      * @return Uri
      */
@@ -752,7 +752,7 @@ class Uri implements UriInterface
     /**
      * Set the port part of the URI
      *
-     * @param  int $port
+     * @param  int|null $port
      * @return Uri
      */
     public function setPort($port)
@@ -764,7 +764,7 @@ class Uri implements UriInterface
     /**
      * Set the path
      *
-     * @param  string $path
+     * @param  string|null $path
      * @return Uri
      */
     public function setPath($path)
@@ -780,7 +780,7 @@ class Uri implements UriInterface
      * query string. Array values will be represented in the query string using
      * PHP's common square bracket notation.
      *
-     * @param  string|array $query
+     * @param  string|array|null $query
      * @return Uri
      */
     public function setQuery($query)
@@ -798,7 +798,7 @@ class Uri implements UriInterface
     /**
      * Set the URI fragment part
      *
-     * @param  string $fragment
+     * @param  string|null $fragment
      * @return Uri
      * @throws Exception\InvalidUriPartException If the schema definition
      * does not have this part
