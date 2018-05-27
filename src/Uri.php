@@ -50,47 +50,47 @@ class Uri implements UriInterface
     /**
      * URI scheme
      *
-     * @var string
+     * @var string|null
      */
     protected $scheme;
 
     /**
      * URI userInfo part (usually user:password in HTTP URLs)
      *
-     * @var string
+     * @var string|null
      */
     protected $userInfo;
 
     /**
      * URI hostname
      *
-     * @var string
+     * @var string|null
      */
     protected $host;
 
     /**
      * URI port
      *
-     * @var int
+     * @var int|null
      */
     protected $port;
 
     /**
      * URI path
      *
-     * @var string
+     * @var string|null
      */
     protected $path;
 
     /**
      * URI query string
      *
-     * @var string
+     * @var string|null
      */
     protected $query;
 
     /**
-     * URI fragment
+     * URI fragment|null
      *
      * @var string
      */
