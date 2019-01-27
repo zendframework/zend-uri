@@ -1371,4 +1371,15 @@ class UriTest extends TestCase
             $uri->toString()
         );
     }
+
+    public function testHostShouldBeNormalizedToLowerCase()
+    {
+        $uri = new Uri();
+        $uri->setHost('www.EXAMPLE.com');
+
+        $this->assertSame(
+            'www.example.com',
+            $uri->getHost()
+        );
+    }
 }

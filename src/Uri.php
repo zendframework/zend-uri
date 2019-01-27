@@ -745,7 +745,7 @@ class Uri implements UriInterface
             ), Exception\InvalidUriPartException::INVALID_HOSTNAME);
         }
 
-        $this->host = $host;
+        $this->host = strtolower($host);
         return $this;
     }
 
