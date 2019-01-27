@@ -309,7 +309,7 @@ class UriTest extends TestCase
     {
         $uri = new Uri;
         $uri->setHost($host);
-        $this->assertEquals($host, $uri->getHost());
+        $this->assertEquals(strtolower($host), $uri->getHost());
     }
 
     /**
@@ -1369,17 +1369,6 @@ class UriTest extends TestCase
         $this->assertSame(
             'https://api.linkedin.com/v1/people/~:(first-name,last-name,email-address,picture-url)',
             $uri->toString()
-        );
-    }
-
-    public function testHostShouldBeNormalizedToLowerCase()
-    {
-        $uri = new Uri();
-        $uri->setHost('www.EXAMPLE.com');
-
-        $this->assertSame(
-            'www.example.com',
-            $uri->getHost()
         );
     }
 }
