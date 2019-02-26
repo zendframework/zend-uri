@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- Nothing.
+- [#28](https://github.com/zendframework/zend-uri/pull/28) adds support for PHP 7.3.
 
 ### Changed
 
