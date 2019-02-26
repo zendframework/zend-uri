@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.6.2 - TBD
+## 2.6.2 - 2019-02-26
 
 ### Added
 
-- Nothing.
+- [#28](https://github.com/zendframework/zend-uri/pull/28) adds support for PHP 7.3.
 
 ### Changed
 
