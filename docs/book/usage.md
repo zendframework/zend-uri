@@ -128,6 +128,13 @@ $scheme = $uri->getHost();  // "example.com"
 
 The `getHost()` method returns only the host part of the URI object.
 
+> ### Host is case insensitive
+>
+> Per [IETF 3986 Section 3.2.2](https://tools.ietf.org/html/rfc3986#section-3.2.2),
+> the host segment of a URL is considered case insensitive. As such, starting in
+> version 2.7.0, we now cast the hostname to lowercase, and `getHost()` will
+> always return a lowercase representation.
+
 ### Getting the port of the URI
 
 The port of the URI is the optional part of the URI that follows the host-part

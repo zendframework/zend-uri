@@ -309,7 +309,7 @@ class UriTest extends TestCase
     {
         $uri = new Uri;
         $uri->setHost($host);
-        $this->assertEquals($host, $uri->getHost());
+        $this->assertEquals(strtolower($host), $uri->getHost());
     }
 
     /**
@@ -821,12 +821,12 @@ class UriTest extends TestCase
             ['mailto:bob@example.com'],
             ['bob@example.com'],
             ['http://a_.!~*\'(-)n0123Di%25%26:pass;:&=+$,word@www.zend.com'],
-            ['http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html'],
-            ['http://[1080::8:800:200C:417A]/foo'],
+            ['http://[fedc:ba98:7654:3210:fedc:ba98:7654:3210]:80/index.html'],
+            ['http://[1080::8:800:200c:417a]/foo'],
             ['http://[::192.9.5.5]/ipng'],
-            ['http://[::FFFF:129.144.52.38]:80/index.html'],
+            ['http://[::ffff:129.144.52.38]:80/index.html'],
             ['http://[2620:0:1cfe:face:b00c::3]/'],
-            ['http://[2010:836B:4179::836B:4179]'],
+            ['http://[2010:836b:4179::836b:4179]'],
             ['http'],
             ['www.example.org:80'],
             ['www.example.org'],
