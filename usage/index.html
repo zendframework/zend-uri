@@ -288,6 +288,13 @@ user-part and comes before the path-part. For example, the host of
 $scheme = $uri-&gt;getHost();  // &quot;example.com&quot;</code></pre>
 
 <p>The <code>getHost()</code> method returns only the host part of the URI object.</p>
+<blockquote>
+<h3 id="host-is-case-insensitive">Host is case insensitive</h3>
+<p>Per <a href="https://tools.ietf.org/html/rfc3986#section-3.2.2">IETF 3986 Section 3.2.2</a>,
+the host segment of a URL is considered case insensitive. As such, starting in
+version 2.7.0, we now cast the hostname to lowercase, and <code>getHost()</code> will
+always return a lowercase representation.</p>
+</blockquote>
 <h3 id="getting-the-port-of-the-uri">Getting the port of the URI</h3>
 <p>The port of the URI is the optional part of the URI that follows the host-part
 and comes before the path-part. For example, the host of
