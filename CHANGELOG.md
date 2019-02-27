@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.7.0 - TBD
+## 2.7.0 - 2019-02-27
 
 ### Added
 
@@ -13,28 +13,6 @@ All notable changes to this project will be documented in this file, in reverse 
 - [#29](https://github.com/zendframework/zend-uri/pull/29) changes the behavior of `getHost()`: it will now always return a lowercase
 - representation. This is in accord with
 - [IETF 3986 Section 3.2.2](https://tools.ietf.org/html/rfc3986#section-3.2.2).
-
-### Deprecated
-
-- Nothing.
-
-### Removed
-
-- Nothing.
-
-### Fixed
-
-- Nothing.
-
-## 2.6.3 - TBD
-
-### Added
-
-- Nothing.
-
-### Changed
-
-- Nothing.
 
 ### Deprecated
 
