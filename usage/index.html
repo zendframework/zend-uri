@@ -11,7 +11,8 @@
 
     <title>Usage - zend-uri</title>
 
-    <link rel="stylesheet" href="../css/styles-e95dab66f8.css">
+    <link rel="stylesheet" href="../css/styles-18b942728f.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 <body id="page-top">
 
@@ -66,7 +67,7 @@
                     
     <div class="subnavigation hidden-print">
         <h4 class="subnavigation__title">
-            <a href="..">zend-uri</a>
+            <a href="">zend-uri</a>
         </h4>
 
         <h5 class="subnavigation__subtitle">Table of Contents</h5>
@@ -75,19 +76,19 @@
             
                 
                     <li class="subnavigation__list-item ">
-                        <a href=".." class="subnavigation__link">zend-uri</a>
+                        <a href="" class="subnavigation__link">zend-uri</a>
                     </li>
                 
             
                 
                     <li class="subnavigation__list-item ">
-                        <a href="../intro/" class="subnavigation__link">Intro</a>
+                        <a href="intro/" class="subnavigation__link">Intro</a>
                     </li>
                 
             
                 
                     <li class="subnavigation__list-item subnavigation__list-item--active">
-                        <a href="./" class="subnavigation__link">Usage</a>
+                        <a href="usage/" class="subnavigation__link">Usage</a>
                     </li>
                 
             
@@ -144,6 +145,17 @@
 </header>
 
     
+    <div class="laminas-announcement">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                Zend Framework transitions to the Linux Foundation. <a href="https://getlaminas.org">Learn More.</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-xs-12 content" role="main">
@@ -156,7 +168,7 @@
         <li><a href="https://docs.zendframework.com/">Documentation</a></li>
 
         
-            <li><a href="..">zend-uri</a></li>
+            <li><a href="">zend-uri</a></li>
 
             
 
@@ -266,7 +278,7 @@ example, the scheme of <code>http://johndoe@example.com/my/path?query#token</cod
 'http'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getScheme();  // &quot;mailto&quot;</code></pre>
+$scheme = $uri-&gt;getScheme();  // "mailto"</code></pre>
 
 <p>The <code>getScheme()</code> instance method returns only the scheme part of the URI
 object (not the separator).</p>
@@ -276,7 +288,7 @@ colon and comes before the host-part. For example, the userinfo of
 <code>http://johndoe@example.com/my/path?query#token</code> is 'johndoe'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getUserinfo();  // &quot;john.doe&quot;</code></pre>
+$scheme = $uri-&gt;getUserinfo();  // "john.doe"</code></pre>
 
 <p>The <code>getUserinfo()</code> method returns only the userinfo part of the URI object.</p>
 <h3 id="getting-the-host-of-the-uri">Getting the host of the URI</h3>
@@ -285,7 +297,7 @@ user-part and comes before the path-part. For example, the host of
 <code>http://johndoe@example.com/my/path?query#token</code> is 'example.com'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getHost();  // &quot;example.com&quot;</code></pre>
+$scheme = $uri-&gt;getHost();  // "example.com"</code></pre>
 
 <p>The <code>getHost()</code> method returns only the host part of the URI object.</p>
 <blockquote>
@@ -301,13 +313,13 @@ and comes before the path-part. For example, the host of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is '80'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:8080');
 
-$scheme = $uri-&gt;getPort();  // &quot;8080&quot;</code></pre>
+$scheme = $uri-&gt;getPort();  // "8080"</code></pre>
 
 <p>Concrete URI instances can define default ports that can be returned when no
 port is given in the URI:</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com');
 
-$scheme = $uri-&gt;getPort();  // &quot;80&quot;</code></pre>
+$scheme = $uri-&gt;getPort();  // "80"</code></pre>
 
 <p>The <code>getHost()</code> method returns only the port part of the URI object.</p>
 <h3 id="getting-the-path-of-the-uri">Getting the path of the URI</h3>
@@ -316,7 +328,7 @@ and comes before the query-part. For example, the path of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is '/my/path'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getPath();  // &quot;/my/path&quot;</code></pre>
+$scheme = $uri-&gt;getPath();  // "/my/path"</code></pre>
 
 <p>The <code>getPath()</code> method returns only the path of the URI object.</p>
 <h3 id="getting-the-query-part-of-the-uri">Getting the query-part of the URI</h3>
@@ -325,7 +337,7 @@ path and comes before the fragment. For example, the query of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is 'query'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getQuery();  // &quot;a=b&amp;c=d&quot;</code></pre>
+$scheme = $uri-&gt;getQuery();  // "a=b&amp;c=d"</code></pre>
 
 <p>The <code>getQuery()</code> method returns only the query-part of the URI object.</p>
 <p>The query string often contains key=value pairs and therefore can be split into an
@@ -344,17 +356,17 @@ the query. For example, the fragment of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is 'token'.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getFragment();  // &quot;token&quot;</code></pre>
+$scheme = $uri-&gt;getFragment();  // "token"</code></pre>
 
 <p>The <code>getFragment()</code> method returns only the fragment-part of the URI object.</p>
 <h3 id="getting-the-entire-uri">Getting the Entire URI</h3>
 <p>The <code>toString()</code> method returns the string representation of the entire <em>URI</em>.</p>
 <pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
 
-echo $uri-&gt;toString();  // &quot;http://www.zend.com&quot;
+echo $uri-&gt;toString();  // "http://www.zend.com"
 
 // Alternate method:
-echo (string) $uri;     // &quot;http://www.zend.com&quot;</code></pre>
+echo (string) $uri;     // "http://www.zend.com"</code></pre>
 
 <p>The <code>Zend\Uri\UriInterface</code> defines also the magic <code>__toString()</code> method that
 returns the string representation of the URI when the object is cast to a
@@ -380,7 +392,7 @@ is still valid.</p>
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../intro/">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="intro/">
                     <i class="fa fa-chevron-left"></i> Previous
                 </a>
             
@@ -420,7 +432,7 @@ is still valid.</p>
                     
     <div class="subnavigation hidden-print">
         <h4 class="subnavigation__title">
-            <a href="..">zend-uri</a>
+            <a href="">zend-uri</a>
         </h4>
 
         <h5 class="subnavigation__subtitle">Table of Contents</h5>
@@ -429,19 +441,19 @@ is still valid.</p>
             
                 
                     <li class="subnavigation__list-item ">
-                        <a href=".." class="subnavigation__link">zend-uri</a>
+                        <a href="" class="subnavigation__link">zend-uri</a>
                     </li>
                 
             
                 
                     <li class="subnavigation__list-item ">
-                        <a href="../intro/" class="subnavigation__link">Intro</a>
+                        <a href="intro/" class="subnavigation__link">Intro</a>
                     </li>
                 
             
                 
                     <li class="subnavigation__list-item subnavigation__list-item--active">
-                        <a href="./" class="subnavigation__link">Usage</a>
+                        <a href="usage/" class="subnavigation__link">Usage</a>
                     </li>
                 
             
@@ -519,9 +531,8 @@ is still valid.</p>
         var base_url = '..',
             siteName = 'zend-uri';
     </script>
-    <script src="../js/scripts-a978f1ec1a.js"></script>
-        <script src="../search/require.js"></script>
-        <script src="../search/search.js"></script>
+    <script src="../js/scripts-edc4cfa790.js"></script>
+        <script src="../search/main.js"></script>
 
     
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
@@ -550,6 +561,14 @@ is still valid.</p>
             </div>
         </div>
     </div>
+
+<script>
+// Anchors
+anchors.options.placement = 'left';
+anchors.add(
+    '.content h1:not(.content__title), .content h2, .content > h3, .content h4, .content h5'
+);
+</script>
 
 
 
