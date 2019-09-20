@@ -301,10 +301,16 @@ class Uri implements UriInterface
                 $this->setUserInfo($userInfo);
             }
 
-            $nMatches = preg_match('/:[\d]{1,5}$/', $authority, $matches);
+            $nMatches = preg_match('/:[\d]{0,5}$/', $authority, $matches);
             if ($nMatches === 1) {
                 $portLength = strlen($matches[0]);
                 $port = substr($matches[0], 1);
+                
+                // If authority ends with colon, port will be empty string.
+                // Remove the colon from authority, but keeps port null
+                if($port !== ''){
+                    $this->setPort((int) $port);
+                }
 
                 $this->setPort((int) $port);
                 $authority = substr($authority, 0, -$portLength);
