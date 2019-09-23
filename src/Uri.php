@@ -312,7 +312,6 @@ class Uri implements UriInterface
                     $this->setPort((int) $port);
                 }
 
-                $this->setPort((int) $port);
                 $authority = substr($authority, 0, -$portLength);
             }
 
