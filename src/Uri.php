@@ -308,7 +308,7 @@ class Uri implements UriInterface
 
                 // If authority ends with colon, port will be empty string.
                 // Remove the colon from authority, but keeps port null
-                if ($port !== '') {
+                if ($port && $port !== '') {
                     $this->setPort((int) $port);
                 }
 
