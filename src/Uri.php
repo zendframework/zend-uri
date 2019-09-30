@@ -305,10 +305,10 @@ class Uri implements UriInterface
             if ($nMatches === 1) {
                 $portLength = strlen($matches[0]);
                 $port = substr($matches[0], 1);
-                
+
                 // If authority ends with colon, port will be empty string.
                 // Remove the colon from authority, but keeps port null
-                if($port !== ''){
+                if ($port !== '') {
                     $this->setPort((int) $port);
                 }
 
