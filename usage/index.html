@@ -247,13 +247,12 @@
 <h2 id="creating-a-new-uri">Creating a New URI</h2>
 <p><code>Zend\Uri\UriFactory</code> will build a new URI from scratch if only a scheme is
 passed to <code>Zend\Uri\UriFactory::factory()</code>.</p>
-<h3 id="creating-a-new-uri-with-zenduriurifactoryfactory">Creating a New URI with ZendUriUriFactory::factory()</h3>
-<pre class="codehilite"><code class="language-php">// To create a new URI from scratch, pass only the scheme
+<h3>Creating a New URI with ZendUriUriFactory::factory()</h3>
+<p> <pre class=codehilite><code class=language-php>// To create a new URI from scratch, pass only the scheme
 // followed by a colon.
 $uri = Zend\Uri\UriFactory::factory('http:');
 
-// $uri instanceof Zend\Uri\UriInterface</code></pre>
-
+// $uri instanceof Zend\Uri\UriInterface</code></pre></p>
 <p>To create a new URI from scratch, pass only the scheme followed by a colon to
 <code>Zend\Uri\UriFactory::factory()</code>. If an unsupported scheme is passed and no
 scheme-specific class is specified, a
@@ -262,11 +261,11 @@ scheme-specific class is specified, a
 return a class implementing <code>Zend\Uri\UriInterface</code> that specializes in the
 scheme referenced.</p>
 <blockquote>
-<h3 id="supported-schemes">Supported schemes</h3>
+<h3>Supported schemes</h3>
 <p>At the time of writing, zend-uri provides built-in support for the following
 schemes only: HTTP, HTTPS, MAILTO and FILE.</p>
 </blockquote>
-<h3 id="creating-a-new-custom-class-uri">Creating a New Custom-Class URI</h3>
+<h3>Creating a New Custom-Class URI</h3>
 <p>You can specify a custom class to be used when using the <code>Zend\Uri\UriFactory</code>
 by registering your class with the <code>UriFactory</code> using
 <code>Zend\Uri\UriFactory::registerScheme($scheme, $class)</code>.  This enables you to
@@ -275,9 +274,9 @@ custom classes.</p>
 <p>The 2nd parameter passed to <code>Zend\Uri\UriFactory::registerScheme()</code> must be a
 string with the name of a class implementing <code>Zend\Uri\UriInterface</code>. The class
 must either be already loaded, or be loadable by the autoloader.</p>
-<h4 id="creating-a-uri-using-a-custom-class">Creating a URI using a custom class</h4>
+<h4>Creating a URI using a custom class</h4>
 <p>The following registers the <code>ftp</code> scheme with a custom URI class:</p>
-<pre class="codehilite"><code class="language-php">use MyNamespace\MyClass;
+<p> <pre class=codehilite><code class=language-php>use MyNamespace\MyClass;
 use Zend\Uri\UriFactory
 
 UriFactory::registerScheme('ftp', MyClass::class);
@@ -287,19 +286,17 @@ $ftpUri = UriFactory::factory(
 );
 
 // $ftpUri is an instance of MyLibrary\MyClass, which implements
-// Zend\Uri\UriInterface</code></pre>
-
+// Zend\Uri\UriInterface</code></pre></p>
 <h2 id="manipulating-an-existing-uri">Manipulating an Existing URI</h2>
 <p>To manipulate an existing URI, pass the entire URI as a string to
 <code>Zend\Uri\UriFactory::factory()</code>, and then manipulate the instance returned.</p>
-<h3 id="manipulating-an-existing-uri-with-zend92uri92urifactoryfactory">Manipulating an Existing URI with Zend\Uri\UriFactory::factory()</h3>
-<pre class="codehilite"><code class="language-php">use Zend\Uri\UriFactory;
+<h3>Manipulating an Existing URI with Zend\Uri\UriFactory::factory()</h3>
+<p> <pre class=codehilite><code class=language-php>use Zend\Uri\UriFactory;
 
 // To manipulate an existing URI, pass it in.
 $uri = UriFactory::factory('http://www.zend.com');
 
-// $uri instanceof Zend\Uri\UriInterface</code></pre>
-
+// $uri instanceof Zend\Uri\UriInterface</code></pre></p>
 <p>The URI will be parsed and validated. If it is found to be invalid, a
 <code>Zend\Uri\Exception\InvalidArgumentException</code> will be thrown immediately.
 Otherwise, <code>Zend\Uri\UriFactory::factory()</code> will return a class implementing
@@ -307,102 +304,92 @@ Otherwise, <code>Zend\Uri\UriFactory::factory()</code> will return a class imple
 <h2 id="common-instance-methods">Common Instance Methods</h2>
 <p>The <code>Zend\Uri\UriInterface</code> defines several instance methods that are useful for
 working with any kind of URI.</p>
-<h3 id="getting-the-scheme-of-the-uri">Getting the Scheme of the URI</h3>
+<h3>Getting the Scheme of the URI</h3>
 <p>The scheme of the URI is the part of the URI that precedes the colon. For
 example, the scheme of <code>http://johndoe@example.com/my/path?query#token</code> is
 'http'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getScheme();  // "mailto"</code></pre>
-
+$scheme = $uri-&gt;getScheme();  // &quot;mailto&quot;</code></pre></p>
 <p>The <code>getScheme()</code> instance method returns only the scheme part of the URI
 object (not the separator).</p>
-<h3 id="getting-the-userinfo-of-the-uri">Getting the Userinfo of the URI</h3>
+<h3>Getting the Userinfo of the URI</h3>
 <p>The userinfo of the URI is the optional part of the URI that follows the
 colon and comes before the host-part. For example, the userinfo of
 <code>http://johndoe@example.com/my/path?query#token</code> is 'johndoe'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getUserinfo();  // "john.doe"</code></pre>
-
+$scheme = $uri-&gt;getUserinfo();  // &quot;john.doe&quot;</code></pre></p>
 <p>The <code>getUserinfo()</code> method returns only the userinfo part of the URI object.</p>
-<h3 id="getting-the-host-of-the-uri">Getting the host of the URI</h3>
+<h3>Getting the host of the URI</h3>
 <p>The host of the URI is the optional part of the URI that follows the
 user-part and comes before the path-part. For example, the host of
 <code>http://johndoe@example.com/my/path?query#token</code> is 'example.com'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getHost();  // "example.com"</code></pre>
-
+$scheme = $uri-&gt;getHost();  // &quot;example.com&quot;</code></pre></p>
 <p>The <code>getHost()</code> method returns only the host part of the URI object.</p>
 <blockquote>
-<h3 id="host-is-case-insensitive">Host is case insensitive</h3>
+<h3>Host is case insensitive</h3>
 <p>Per <a href="https://tools.ietf.org/html/rfc3986#section-3.2.2">IETF 3986 Section 3.2.2</a>,
 the host segment of a URL is considered case insensitive. As such, starting in
 version 2.7.0, we now cast the hostname to lowercase, and <code>getHost()</code> will
 always return a lowercase representation.</p>
 </blockquote>
-<h3 id="getting-the-port-of-the-uri">Getting the port of the URI</h3>
+<h3>Getting the port of the URI</h3>
 <p>The port of the URI is the optional part of the URI that follows the host-part
 and comes before the path-part. For example, the host of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is '80'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:8080');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:8080');
 
-$scheme = $uri-&gt;getPort();  // "8080"</code></pre>
-
+$scheme = $uri-&gt;getPort();  // &quot;8080&quot;</code></pre></p>
 <p>Concrete URI instances can define default ports that can be returned when no
 port is given in the URI:</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com');
 
-$scheme = $uri-&gt;getPort();  // "80"</code></pre>
-
+$scheme = $uri-&gt;getPort();  // &quot;80&quot;</code></pre></p>
 <p>The <code>getHost()</code> method returns only the port part of the URI object.</p>
-<h3 id="getting-the-path-of-the-uri">Getting the path of the URI</h3>
+<h3>Getting the path of the URI</h3>
 <p>The path of the URI is a mandatory part of the URI that follows the port
 and comes before the query-part. For example, the path of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is '/my/path'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getPath();  // "/my/path"</code></pre>
-
+$scheme = $uri-&gt;getPath();  // &quot;/my/path&quot;</code></pre></p>
 <p>The <code>getPath()</code> method returns only the path of the URI object.</p>
-<h3 id="getting-the-query-part-of-the-uri">Getting the query-part of the URI</h3>
+<h3>Getting the query-part of the URI</h3>
 <p>The query-part of the URI is an optional part of the URI that follows the
 path and comes before the fragment. For example, the query of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is 'query'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getQuery();  // "a=b&amp;c=d"</code></pre>
-
+$scheme = $uri-&gt;getQuery();  // &quot;a=b&amp;c=d&quot;</code></pre></p>
 <p>The <code>getQuery()</code> method returns only the query-part of the URI object.</p>
 <p>The query string often contains key=value pairs and therefore can be split into an
 associative array. This array can be retrieved using <code>getQueryAsArray()</code>:</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
 $scheme = $uri-&gt;getQueryAsArray();
 // [
 //  'a' =&gt; 'b',
 //  'c' =&gt; 'd',
-// ]</code></pre>
-
-<h3 id="getting-the-fragment-part-of-the-uri">Getting the fragment-part of the URI</h3>
+// ]</code></pre></p>
+<h3>Getting the fragment-part of the URI</h3>
 <p>The fragment-part of the URI is an optional part of the URI that follows
 the query. For example, the fragment of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is 'token'.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getFragment();  // "token"</code></pre>
-
+$scheme = $uri-&gt;getFragment();  // &quot;token&quot;</code></pre></p>
 <p>The <code>getFragment()</code> method returns only the fragment-part of the URI object.</p>
-<h3 id="getting-the-entire-uri">Getting the Entire URI</h3>
+<h3>Getting the Entire URI</h3>
 <p>The <code>toString()</code> method returns the string representation of the entire <em>URI</em>.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
 
-echo $uri-&gt;toString();  // "http://www.zend.com"
+echo $uri-&gt;toString();  // &quot;http://www.zend.com&quot;
 
 // Alternate method:
-echo (string) $uri;     // "http://www.zend.com"</code></pre>
-
+echo (string) $uri;     // &quot;http://www.zend.com&quot;</code></pre></p>
 <p>The <code>Zend\Uri\UriInterface</code> defines also the magic <code>__toString()</code> method that
 returns the string representation of the URI when the object is cast to a
 string.</p>
@@ -412,10 +399,9 @@ validated and a <code>Zend\Uri\Exception\InvalidArgumentException</code> will be
 when the URI is invalid. However, after the <code>Zend\Uri\UriInterface</code> is
 instantiated for a new URI or an existing valid one, it is possible that the URI
 can later become invalid after it is manipulated.</p>
-<pre class="codehilite"><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
+<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
 
-$isValid = $uri-&gt;isValid();  // TRUE</code></pre>
-
+$isValid = $uri-&gt;isValid();  // TRUE</code></pre></p>
 <p>The <code>isValid()</code> instance method provides a means to check that the URI object
 is still valid.</p>
 
@@ -447,7 +433,7 @@ is still valid.</p>
     <div class="help-wanted">
         <p>
             Found a mistake or want to contribute to the documentation?
-            <a href="https://github.com/zendframework/zend-uri/edit/master/docs/usage.md" target="_blank" class="help-wanted__link">
+            <a href="https://github.com/zendframework/zend-uri/edit/master/docs/book/usage.md" target="_blank" class="help-wanted__link">
                 Edit this page on GitHub!
             </a>
         </p>
