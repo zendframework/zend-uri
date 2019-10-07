@@ -22,7 +22,8 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- Nothing.
+- [#34](https://github.com/zendframework/zend-uri/pull/34) fixes hostname recognition
+  when port number is not provided. Additional colon is stripped out.
 
 ## 2.7.0 - 2019-02-27
 
