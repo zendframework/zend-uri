@@ -1378,6 +1378,6 @@ class UriTest extends TestCase
         $uri = new Uri($uriString);
 
         $this->assertSame('www.example.com', $uri->getHost());
-        $this->assertSame(null, $uri->getPort());
+        $this->assertNull($uri->getPort());
     }
 }
