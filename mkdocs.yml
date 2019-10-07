@@ -1,10 +1,9 @@
 docs_dir: docs/book
 site_dir: docs/html
-pages:
-    - index.md
-    - Intro: intro.md
+nav:
+    - Home: index.md
+    - Introduction: intro.md
     - Usage: usage.md
 site_name: zend-uri
-site_description: zend-uri
+site_description: "Object oriented interface to URIs, with facilities for validation"
 repo_url: 'https://github.com/zendframework/zend-uri'
-copyright: 'Copyright (c) 2005-2018 <a href="https://www.zend.com/">Zend Technologies USA Inc.</a>'
