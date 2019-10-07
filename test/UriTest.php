@@ -1371,4 +1371,13 @@ class UriTest extends TestCase
             $uri->toString()
         );
     }
+
+    public function testUriWithEndingColonWithoutPort()
+    {
+        $uriString = 'http://www.example.com:';
+        $uri = new Uri($uriString);
+
+        $this->assertSame('www.example.com', $uri->getHost());
+        $this->assertNull($uri->getPort());
+    }
 }
