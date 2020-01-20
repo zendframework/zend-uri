@@ -2,7 +2,7 @@
 
 > ## Repository abandoned 2019-12-31
 >
-> This repository has moved to laminas/laminas-uri.
+> This repository has moved to [laminas/laminas-uri](https://github.com/laminas/laminas-uri).
 
 [![Build Status](https://secure.travis-ci.org/zendframework/zend-uri.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-uri)
 [![Coverage Status](https://coveralls.io/repos/github/zendframework/zend-uri/badge.svg?branch=master)](https://coveralls.io/github/zendframework/zend-uri?branch=master)
