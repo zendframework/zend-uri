@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Object oriented interface to URIs, with facilities for validation">  
-    <link rel="canonical" href="https://docs.zendframework.com/zend-uri/usage/">
+    <link rel="canonical" href="https://docs.zendframework.com/usage/">
     <link rel="shortcut icon" href="../img/favicon.ico">
 
     <title>Usage - zend-uri - Zend Framework Docs</title>
 
-    <link rel="stylesheet" href="../css/styles-5cfabd53ee.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body id="page-top">
 
@@ -160,9 +160,9 @@
     <div class="laminas-announcement">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                Zend Framework transitions to the Linux Foundation. <a href="https://getlaminas.org">Learn More.</a>
-            </div>
+            <div class="col-xs-12"><strong>
+                This package has moved. Visit its replacement, <a href="https://docs.laminas.dev/laminas-uri/">laminas/laminas-uri.</a>
+            </strong></div>
         </div>
     </div>
 </div>
@@ -234,11 +234,13 @@
 <p><code>Zend\Uri\UriFactory</code> will build a new URI from scratch if only a scheme is
 passed to <code>Zend\Uri\UriFactory::factory()</code>.</p>
 <h3>Creating a New URI with ZendUriUriFactory::factory()</h3>
-<p> <pre class=codehilite><code class=language-php>// To create a new URI from scratch, pass only the scheme
+<pre><code class="language-php">// To create a new URI from scratch, pass only the scheme
 // followed by a colon.
 $uri = Zend\Uri\UriFactory::factory('http:');
 
-// $uri instanceof Zend\Uri\UriInterface</code></pre></p>
+// $uri instanceof Zend\Uri\UriInterface
+</code></pre>
+
 <p>To create a new URI from scratch, pass only the scheme followed by a colon to
 <code>Zend\Uri\UriFactory::factory()</code>. If an unsupported scheme is passed and no
 scheme-specific class is specified, a
@@ -262,7 +264,7 @@ string with the name of a class implementing <code>Zend\Uri\UriInterface</code>.
 must either be already loaded, or be loadable by the autoloader.</p>
 <h4>Creating a URI using a custom class</h4>
 <p>The following registers the <code>ftp</code> scheme with a custom URI class:</p>
-<p> <pre class=codehilite><code class=language-php>use MyNamespace\MyClass;
+<pre><code class="language-php">use MyNamespace\MyClass;
 use Zend\Uri\UriFactory
 
 UriFactory::registerScheme('ftp', MyClass::class);
@@ -272,17 +274,21 @@ $ftpUri = UriFactory::factory(
 );
 
 // $ftpUri is an instance of MyLibrary\MyClass, which implements
-// Zend\Uri\UriInterface</code></pre></p>
+// Zend\Uri\UriInterface
+</code></pre>
+
 <h2 id="manipulating-an-existing-uri">Manipulating an Existing URI</h2>
 <p>To manipulate an existing URI, pass the entire URI as a string to
 <code>Zend\Uri\UriFactory::factory()</code>, and then manipulate the instance returned.</p>
 <h3>Manipulating an Existing URI with Zend\Uri\UriFactory::factory()</h3>
-<p> <pre class=codehilite><code class=language-php>use Zend\Uri\UriFactory;
+<pre><code class="language-php">use Zend\Uri\UriFactory;
 
 // To manipulate an existing URI, pass it in.
 $uri = UriFactory::factory('http://www.zend.com');
 
-// $uri instanceof Zend\Uri\UriInterface</code></pre></p>
+// $uri instanceof Zend\Uri\UriInterface
+</code></pre>
+
 <p>The URI will be parsed and validated. If it is found to be invalid, a
 <code>Zend\Uri\Exception\InvalidArgumentException</code> will be thrown immediately.
 Otherwise, <code>Zend\Uri\UriFactory::factory()</code> will return a class implementing
@@ -294,26 +300,32 @@ working with any kind of URI.</p>
 <p>The scheme of the URI is the part of the URI that precedes the colon. For
 example, the scheme of <code>http://johndoe@example.com/my/path?query#token</code> is
 'http'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getScheme();  // &quot;mailto&quot;</code></pre></p>
+$scheme = $uri-&gt;getScheme();  // &quot;mailto&quot;
+</code></pre>
+
 <p>The <code>getScheme()</code> instance method returns only the scheme part of the URI
 object (not the separator).</p>
 <h3>Getting the Userinfo of the URI</h3>
 <p>The userinfo of the URI is the optional part of the URI that follows the
 colon and comes before the host-part. For example, the userinfo of
 <code>http://johndoe@example.com/my/path?query#token</code> is 'johndoe'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getUserinfo();  // &quot;john.doe&quot;</code></pre></p>
+$scheme = $uri-&gt;getUserinfo();  // &quot;john.doe&quot;
+</code></pre>
+
 <p>The <code>getUserinfo()</code> method returns only the userinfo part of the URI object.</p>
 <h3>Getting the host of the URI</h3>
 <p>The host of the URI is the optional part of the URI that follows the
 user-part and comes before the path-part. For example, the host of
 <code>http://johndoe@example.com/my/path?query#token</code> is 'example.com'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('mailto:john.doe@example.com');
 
-$scheme = $uri-&gt;getHost();  // &quot;example.com&quot;</code></pre></p>
+$scheme = $uri-&gt;getHost();  // &quot;example.com&quot;
+</code></pre>
+
 <p>The <code>getHost()</code> method returns only the host part of the URI object.</p>
 <blockquote>
 <h3>Host is case insensitive</h3>
@@ -326,56 +338,70 @@ always return a lowercase representation.</p>
 <p>The port of the URI is the optional part of the URI that follows the host-part
 and comes before the path-part. For example, the host of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is '80'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:8080');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:8080');
 
-$scheme = $uri-&gt;getPort();  // &quot;8080&quot;</code></pre></p>
+$scheme = $uri-&gt;getPort();  // &quot;8080&quot;
+</code></pre>
+
 <p>Concrete URI instances can define default ports that can be returned when no
 port is given in the URI:</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com');
 
-$scheme = $uri-&gt;getPort();  // &quot;80&quot;</code></pre></p>
+$scheme = $uri-&gt;getPort();  // &quot;80&quot;
+</code></pre>
+
 <p>The <code>getHost()</code> method returns only the port part of the URI object.</p>
 <h3>Getting the path of the URI</h3>
 <p>The path of the URI is a mandatory part of the URI that follows the port
 and comes before the query-part. For example, the path of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is '/my/path'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getPath();  // &quot;/my/path&quot;</code></pre></p>
+$scheme = $uri-&gt;getPath();  // &quot;/my/path&quot;
+</code></pre>
+
 <p>The <code>getPath()</code> method returns only the path of the URI object.</p>
 <h3>Getting the query-part of the URI</h3>
 <p>The query-part of the URI is an optional part of the URI that follows the
 path and comes before the fragment. For example, the query of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is 'query'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getQuery();  // &quot;a=b&amp;c=d&quot;</code></pre></p>
+$scheme = $uri-&gt;getQuery();  // &quot;a=b&amp;c=d&quot;
+</code></pre>
+
 <p>The <code>getQuery()</code> method returns only the query-part of the URI object.</p>
 <p>The query string often contains key=value pairs and therefore can be split into an
 associative array. This array can be retrieved using <code>getQueryAsArray()</code>:</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
 $scheme = $uri-&gt;getQueryAsArray();
 // [
 //  'a' =&gt; 'b',
 //  'c' =&gt; 'd',
-// ]</code></pre></p>
+// ]
+</code></pre>
+
 <h3>Getting the fragment-part of the URI</h3>
 <p>The fragment-part of the URI is an optional part of the URI that follows
 the query. For example, the fragment of
 <code>http://johndoe@example.com:80/my/path?query#token</code> is 'token'.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://example.com:80/my/path?a=b&amp;c=d#token');
 
-$scheme = $uri-&gt;getFragment();  // &quot;token&quot;</code></pre></p>
+$scheme = $uri-&gt;getFragment();  // &quot;token&quot;
+</code></pre>
+
 <p>The <code>getFragment()</code> method returns only the fragment-part of the URI object.</p>
 <h3>Getting the Entire URI</h3>
 <p>The <code>toString()</code> method returns the string representation of the entire <em>URI</em>.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
 
 echo $uri-&gt;toString();  // &quot;http://www.zend.com&quot;
 
 // Alternate method:
-echo (string) $uri;     // &quot;http://www.zend.com&quot;</code></pre></p>
+echo (string) $uri;     // &quot;http://www.zend.com&quot;
+</code></pre>
+
 <p>The <code>Zend\Uri\UriInterface</code> defines also the magic <code>__toString()</code> method that
 returns the string representation of the URI when the object is cast to a
 string.</p>
@@ -385,9 +411,11 @@ validated and a <code>Zend\Uri\Exception\InvalidArgumentException</code> will be
 when the URI is invalid. However, after the <code>Zend\Uri\UriInterface</code> is
 instantiated for a new URI or an existing valid one, it is possible that the URI
 can later become invalid after it is manipulated.</p>
-<p> <pre class=codehilite><code class=language-php>$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
+<pre><code class="language-php">$uri = Zend\Uri\UriFactory::factory('http://www.zend.com');
 
-$isValid = $uri-&gt;isValid();  // TRUE</code></pre></p>
+$isValid = $uri-&gt;isValid();  // TRUE
+</code></pre>
+
 <p>The <code>isValid()</code> instance method provides a means to check that the URI object
 is still valid.</p>
 
@@ -512,7 +540,7 @@ is still valid.</p>
             
             <div class="col-md-9">
                 <h4 class="footer__headline">Copyright</h4>
-                <p>&copy; 2006-2019 by <a href="https://www.zend.com/">Zend</a>, a <a href="https://www.roguewave.com/">Rogue Wave Company</a>.</p>
+                <p>&copy; 2006-2020 by <a href="https://www.zend.com/">Zend</a> by <a href="https://www.perforce.com/">Perforce</a>.</p>
             </div>
 
             
@@ -520,10 +548,10 @@ is still valid.</p>
                 <h4 class="footer__headline">Support</h4>
                 <ul class="support__list">
                     <li class="support__list-item">
-                        <a href="https://discourse.zendframework.com" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
+                        <a href="https://discourse.laminas.dev" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
                     </li>
                     <li class="support__list-item">
-                        <a href="https://zendframework-slack.herokuapp.com" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
+                        <a href="https://laminas.dev/chat/" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
                     </li>
                     <li class="support__list-item">
                         <a href="https://github.com/zendframework" class="support__link" title="Github"><i class="fa fa-github"></i></a>
@@ -531,27 +559,28 @@ is still valid.</p>
                     <li class="support__list-item">
                         <a href="https://twitter.com/zfdevteam" class="support__link" title="Twitter"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li class="support__list-item">
-                        <a href="https://tinyletter.com/mwopzend" class="support__link" title="Newsletter"><i class="fa fa-envelope"></i></a>
-                    </li>
-                    <li class="support__list-item">
-                        <a href="https://framework.zend.com/blog/feed-rss.xml" class="support__link" title="Blog feed"><i class="fa fa-rss"></i></a>
-                    </li>
-                    <li class="support__list-item">
-                        <a href="https://framework.zend.com/security/feed" class="support__link" title="Security feed"><i class="fa fa-rss-square"></i></a>
-                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
 
+<nav class="cookie-bar navbar navbar-fixed-bottom navbar-default hidden">
+    <div class="container">
+        <p class="navbar-text">
+            We use cookies to allow you to dismiss dialogs such as the Laminas
+            Project notification.
+        </p>
+        <button type="button" class="cookie-button btn btn-default navbar-btn">Allow Cookies</button>
+    </div>
+</nav>
+
     <script>
         var base_url = '..',
             siteName = 'zend-uri';
     </script>
-    <script src="../js/scripts-8d7ae56abf.js"></script>
-        <script src="../search/main.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="../search/main.js"></script>
 
     
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
